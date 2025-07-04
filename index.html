@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    
+    <!-- Get JetBrains font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap" rel="stylesheet">
+
+    <title>Proto1</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css"> 
+
+  </head>
+  
+  <body>
+    
+    <!-- Grid section with all apps -->
+    <div class="container">
+      
+      <!-- Todo list -->
+      <div class="tasks">
+        
+        <!-- Add task -->
+        <div class="add_task">
+          <input type="text" id="task_content" name="task_content">
+          <input class="btn" type="button" id="add_task_btn" value="Add">
+        </div>  
+      
+      </div>
+
+      <!-- Pomodoro -->
+      <div class="pomodoro">
+        
+        <!-- Timer -->
+        <div id="pomo_state">Not launched</div>
+      <div id="pomo_timer">25:00</div>
+        <!-- Buttons -->
+        <div id="pomo_btn">
+          <input class="btn" type="button" id="start_pomo" value="Start">
+          <input class="btn" type="button" id="pause_pomo" value="Pause">
+          <input class="btn" type="button" id="stop_pomo" value="Stop">
+        </div>
+      
+        </div>
+
+      <!-- Clock and date -->
+      <div class="clock">
+        
+        <div id="clock_content">--:--</div>
+        <div id="date_content">-----</div>  
+
+      </div>
+
+      <!-- Block computer -->
+      <div class="block">
+        
+        <div>
+          Nothing for now
+        </div>
+
+      </div>
+    
+    </div>
+    
+    <!-- Link the js file  -->
+    <script src="app.js" type="text/javascript"></script>
+
+  </body>
+
+</html>
+

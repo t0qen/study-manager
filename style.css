@@ -1,0 +1,111 @@
+* {
+  font-family: "JetBrains Mono";
+}
+
+/* Grids, areas*/
+
+.container {
+  display: grid;
+  grid-template-columns: 3fr 20%; 
+  grid-template-rows: 2fr 2fr 3fr; 
+  gap: 15px 15px; 
+  grid-template-areas: 
+    "tasks clock"
+    "tasks pomodoro"
+    "tasks block"; 
+}
+
+/* Todo-list */
+.tasks {
+  border: 3px solid #ca9ee6;
+  border-radius: 15px;
+  grid-area: tasks;
+  background-color: #232634;
+  padding: 10px;
+}
+
+#add_task_btn {
+  /* margin-left: 10px; */
+}
+
+#task_content {
+  border: 3px solid #51576d;
+  border-radius: 8px; 
+  margin-right: 10px;
+  background-color: #303446;
+}
+
+.add_task {
+  display: flex;
+  justify-content: center;
+}
+
+/* Pomodoro */
+.pomodoro {
+  border: 3px solid #a6d189;
+  border-radius: 15px;
+  grid-area: pomodoro;
+  background-color: #232634;
+  padding: 10px;
+}
+
+#pomo_state {
+  text-align: center;
+  font-size: 1rem;
+  font-style: italic;
+}
+
+#pomo_timer {
+  text-align: center; 
+  font-size: 3rem;
+}
+
+#pomo_btn {
+  display: flex;
+  justify-content: center;
+}
+
+/* Clock */
+.clock {
+  border: 3px solid #f2d5cf;
+  border-radius: 15px;
+  grid-area: clock;
+  background-color: #232634;
+  padding-top: 10px;
+}
+
+#clock_content {
+  text-align: center;
+  font-size: 3rem;
+}
+
+#date_content {
+  text-align: center;
+  font-weight: 800;
+}
+
+/* Block cumputer */
+.block {
+  border: 3px solid #ea999c;
+  border-radius: 15px;
+  grid-area: block;
+  background-color: #232634;
+}
+
+/* Buttons */
+.btn {
+  background-color: #a5adce;
+  margin: 2px;
+  border-color: #a5adce;
+  /* border: none; */
+  border-radius: 8px;
+}
+
+.btn:hover {
+  background-color: #babbf1;
+  border-color: #babbf1;
+  border-radius: 8px;
+  transform: translateY(-2px);
+}
+
+
