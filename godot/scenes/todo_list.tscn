@@ -1,0 +1,79 @@
+[gd_scene load_steps=2 format=3 uid="uid://duh117iy3yl2l"]
+
+[ext_resource type="FontFile" uid="uid://wtjo68m12553" path="res://misc/fonts/MonaspaceArgon-Medium.otf" id="1_l622n"]
+
+[node name="todo-list" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = -32.0
+offset_right = 8.0
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="main_bg" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 448.0
+offset_top = 64.0
+offset_right = 1128.0
+offset_bottom = 624.0
+color = Color(0.0941176, 0.0941176, 0.145098, 1)
+
+[node name="tasks_bg" type="ColorRect" parent="."]
+layout_mode = 0
+offset_left = 24.0
+offset_top = 64.0
+offset_right = 448.0
+offset_bottom = 624.0
+color = Color(0.117647, 0.117647, 0.180392, 1)
+
+[node name="tasks" type="TextEdit" parent="."]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 72.0
+offset_right = 440.0
+offset_bottom = 616.0
+theme_override_colors/background_color = Color(0.117647, 0.117647, 0.180392, 1)
+theme_override_colors/font_color = Color(0.803922, 0.839216, 0.956863, 1)
+theme_override_colors/selection_color = Color(0.705882, 0.745098, 0.996078, 1)
+theme_override_colors/font_selected_color = Color(0.0666667, 0.0666667, 0.105882, 1)
+theme_override_colors/caret_background_color = Color(0, 0, 0, 1)
+theme_override_colors/caret_color = Color(0.705882, 0.745098, 0.996078, 1)
+theme_override_constants/line_spacing = -4
+theme_override_constants/caret_width = 10
+theme_override_fonts/font = ExtResource("1_l622n")
+theme_override_font_sizes/font_size = 19
+text = "éezadsqdsq
+sfdsfdsfsdfsdfdssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss"
+context_menu_enabled = false
+virtual_keyboard_enabled = false
+wrap_mode = 1
+caret_blink = true
+caret_blink_interval = 0.4
+
+[node name="main" type="TextEdit" parent="."]
+layout_mode = 0
+offset_left = 456.0
+offset_top = 72.0
+offset_right = 1120.0
+offset_bottom = 616.0
+theme_override_colors/background_color = Color(0.0941176, 0.0941176, 0.145098, 1)
+theme_override_colors/font_color = Color(0.803922, 0.839216, 0.956863, 1)
+theme_override_colors/selection_color = Color(0.705882, 0.745098, 0.996078, 1)
+theme_override_colors/font_selected_color = Color(0.0666667, 0.0666667, 0.105882, 1)
+theme_override_colors/caret_color = Color(0.705882, 0.745098, 0.996078, 1)
+theme_override_constants/line_spacing = -4
+theme_override_constants/caret_width = 10
+theme_override_fonts/font = ExtResource("1_l622n")
+theme_override_font_sizes/font_size = 16
+text = "fedsqdsqfdsqqdsfesdsfsd"
+context_menu_enabled = false
+virtual_keyboard_enabled = false
+wrap_mode = 1
+scroll_smooth = true
+minimap_width = 40
+caret_blink = true
+caret_blink_interval = 0.4

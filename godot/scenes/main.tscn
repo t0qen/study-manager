@@ -1,0 +1,134 @@
+[gd_scene load_steps=9 format=3 uid="uid://cgvbuopr2uy37"]
+
+[ext_resource type="FontFile" uid="uid://btwtvftlypcuy" path="res://misc/fonts/NotoSerif-Medium.ttf" id="1_jyhfs"]
+[ext_resource type="FontFile" uid="uid://b3u1oy2aaoo8j" path="res://misc/fonts/MonaspaceNeon-Medium.otf" id="2_0wfyh"]
+[ext_resource type="FontFile" uid="uid://wtjo68m12553" path="res://misc/fonts/MonaspaceArgon-Medium.otf" id="2_sugp2"]
+[ext_resource type="LabelSettings" uid="uid://cjilq4k2rqe3r" path="res://misc/fonts_settings/next_prev_labels.tres" id="4_jyhfs"]
+[ext_resource type="PackedScene" uid="uid://duh117iy3yl2l" path="res://scenes/todo_list.tscn" id="5_tbgi4"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_sgp6g"]
+font = ExtResource("1_jyhfs")
+font_size = 43
+font_color = Color(0.803922, 0.839216, 0.956863, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_o5qli"]
+font = ExtResource("2_sugp2")
+font_size = 32
+font_color = Color(0.803922, 0.839216, 0.956863, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_0wfyh"]
+font = ExtResource("2_0wfyh")
+font_size = 34
+font_color = Color(0.729412, 0.760784, 0.870588, 1)
+
+[node name="main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0666667, 0.0666667, 0.105882, 1)
+
+[node name="todo-list" parent="." instance=ExtResource("5_tbgi4")]
+layout_mode = 1
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 0.0
+offset_bottom = 0.0
+
+[node name="labels" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="next_label" type="Label" parent="labels"]
+layout_mode = 0
+offset_left = 1096.0
+offset_right = 1144.0
+offset_bottom = 56.0
+text = ">"
+label_settings = ExtResource("4_jyhfs")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="pomo_state" type="Label" parent="labels"]
+layout_mode = 0
+offset_left = 456.0
+offset_right = 696.0
+offset_bottom = 64.0
+text = "WORK"
+label_settings = SubResource("LabelSettings_sgp6g")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="pomo_value" type="Label" parent="labels"]
+layout_mode = 0
+offset_left = 200.0
+offset_right = 312.0
+offset_bottom = 64.0
+text = "25:00"
+label_settings = SubResource("LabelSettings_o5qli")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="current_date" type="Label" parent="labels"]
+layout_mode = 0
+offset_left = 840.0
+offset_right = 952.0
+offset_bottom = 64.0
+text = "10:53"
+label_settings = SubResource("LabelSettings_0wfyh")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="prev_label" type="Label" parent="labels"]
+layout_mode = 0
+offset_left = 8.0
+offset_right = 56.0
+offset_bottom = 56.0
+text = "<"
+label_settings = ExtResource("4_jyhfs")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="buttons" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="toggle_pomo" type="Button" parent="buttons"]
+layout_mode = 0
+offset_left = 448.0
+offset_right = 704.0
+offset_bottom = 64.0
+flat = true
+
+[node name="pause_pomo" type="Button" parent="buttons"]
+layout_mode = 0
+offset_left = 192.0
+offset_right = 320.0
+offset_bottom = 64.0
+flat = true
+
+[node name="prev" type="Button" parent="buttons"]
+layout_mode = 0
+offset_left = 8.0
+offset_right = 56.0
+offset_bottom = 64.0
+flat = true
+
+[node name="next" type="Button" parent="buttons"]
+layout_mode = 0
+offset_left = 1096.0
+offset_right = 1144.0
+offset_bottom = 64.0
+flat = true

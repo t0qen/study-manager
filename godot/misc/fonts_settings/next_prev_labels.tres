@@ -1,0 +1,8 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://cjilq4k2rqe3r"]
+
+[ext_resource type="FontFile" uid="uid://o7qpmbcg1jlt" path="res://misc/fonts/Lexend-SemiBold.ttf" id="1_oru6t"]
+
+[resource]
+font = ExtResource("1_oru6t")
+font_size = 41
+font_color = Color(0.423529, 0.439216, 0.52549, 1)
