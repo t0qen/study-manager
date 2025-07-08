@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://duh117iy3yl2l"]
+[gd_scene load_steps=4 format=3 uid="uid://duh117iy3yl2l"]
 
+[ext_resource type="Script" uid="uid://oq4d7vc584dq" path="res://scripts/todo_list.gd" id="1_ash3i"]
 [ext_resource type="FontFile" uid="uid://wtjo68m12553" path="res://misc/fonts/MonaspaceArgon-Medium.otf" id="1_l622n"]
+[ext_resource type="FontFile" uid="uid://b3u1oy2aaoo8j" path="res://misc/fonts/MonaspaceNeon-Medium.otf" id="2_x4pev"]
 
 [node name="todo-list" type="Control"]
 layout_mode = 3
@@ -13,6 +15,7 @@ offset_right = 8.0
 offset_bottom = 64.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_ash3i")
 
 [node name="main_bg" type="ColorRect" parent="."]
 layout_mode = 0
@@ -37,6 +40,7 @@ offset_top = 72.0
 offset_right = 440.0
 offset_bottom = 616.0
 theme_override_colors/background_color = Color(0.117647, 0.117647, 0.180392, 1)
+theme_override_colors/font_placeholder_color = Color(0.270588, 0.278431, 0.352941, 1)
 theme_override_colors/font_color = Color(0.803922, 0.839216, 0.956863, 1)
 theme_override_colors/selection_color = Color(0.705882, 0.745098, 0.996078, 1)
 theme_override_colors/font_selected_color = Color(0.0666667, 0.0666667, 0.105882, 1)
@@ -46,8 +50,7 @@ theme_override_constants/line_spacing = -4
 theme_override_constants/caret_width = 10
 theme_override_fonts/font = ExtResource("1_l622n")
 theme_override_font_sizes/font_size = 19
-text = "éezadsqdsq
-sfdsfdsfsdfsdfdssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss"
+placeholder_text = "/* todo */"
 context_menu_enabled = false
 virtual_keyboard_enabled = false
 wrap_mode = 1
@@ -61,15 +64,16 @@ offset_top = 72.0
 offset_right = 1120.0
 offset_bottom = 616.0
 theme_override_colors/background_color = Color(0.0941176, 0.0941176, 0.145098, 1)
+theme_override_colors/font_placeholder_color = Color(0.270588, 0.278431, 0.352941, 1)
 theme_override_colors/font_color = Color(0.803922, 0.839216, 0.956863, 1)
 theme_override_colors/selection_color = Color(0.705882, 0.745098, 0.996078, 1)
 theme_override_colors/font_selected_color = Color(0.0666667, 0.0666667, 0.105882, 1)
 theme_override_colors/caret_color = Color(0.705882, 0.745098, 0.996078, 1)
 theme_override_constants/line_spacing = -4
 theme_override_constants/caret_width = 10
-theme_override_fonts/font = ExtResource("1_l622n")
+theme_override_fonts/font = ExtResource("2_x4pev")
 theme_override_font_sizes/font_size = 16
-text = "fedsqdsqfdsqqdsfesdsfsd"
+placeholder_text = "/* notes */"
 context_menu_enabled = false
 virtual_keyboard_enabled = false
 wrap_mode = 1
@@ -77,3 +81,6 @@ scroll_smooth = true
 minimap_width = 40
 caret_blink = true
 caret_blink_interval = 0.4
+
+[connection signal="text_changed" from="tasks" to="." method="_on_tasks_text_changed"]
+[connection signal="text_changed" from="main" to="." method="_on_main_text_changed"]

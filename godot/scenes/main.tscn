@@ -1,10 +1,12 @@
-[gd_scene load_steps=9 format=3 uid="uid://cgvbuopr2uy37"]
+[gd_scene load_steps=20 format=3 uid="uid://cgvbuopr2uy37"]
 
 [ext_resource type="FontFile" uid="uid://btwtvftlypcuy" path="res://misc/fonts/NotoSerif-Medium.ttf" id="1_jyhfs"]
+[ext_resource type="Script" uid="uid://b3r46rfhp5h3h" path="res://scripts/main.gd" id="1_tefeu"]
 [ext_resource type="FontFile" uid="uid://b3u1oy2aaoo8j" path="res://misc/fonts/MonaspaceNeon-Medium.otf" id="2_0wfyh"]
 [ext_resource type="FontFile" uid="uid://wtjo68m12553" path="res://misc/fonts/MonaspaceArgon-Medium.otf" id="2_sugp2"]
 [ext_resource type="LabelSettings" uid="uid://cjilq4k2rqe3r" path="res://misc/fonts_settings/next_prev_labels.tres" id="4_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://duh117iy3yl2l" path="res://scenes/todo_list.tscn" id="5_tbgi4"]
+[ext_resource type="FontFile" uid="uid://cn8cdjp73s01g" path="res://misc/fonts/MonaspaceKrypton-Medium.otf" id="7_o6xl0"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_sgp6g"]
 font = ExtResource("1_jyhfs")
@@ -21,6 +23,27 @@ font = ExtResource("2_0wfyh")
 font_size = 34
 font_color = Color(0.729412, 0.760784, 0.870588, 1)
 
+[sub_resource type="LabelSettings" id="LabelSettings_tipki"]
+font = ExtResource("7_o6xl0")
+font_size = 34
+font_color = Color(0.192157, 0.196078, 0.266667, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tbgi4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tefeu"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_o6xl0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tipki"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_85g3d"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_choun"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ya4ey"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_eb6dy"]
+
 [node name="main" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -28,6 +51,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_tefeu")
 
 [node name="background" type="ColorRect" parent="."]
 layout_mode = 1
@@ -38,12 +62,62 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.0666667, 0.0666667, 0.105882, 1)
 
-[node name="todo-list" parent="." instance=ExtResource("5_tbgi4")]
+[node name="todo_container" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="todo-list" parent="todo_container" instance=ExtResource("5_tbgi4")]
 layout_mode = 1
 offset_left = 0.0
 offset_top = 0.0
 offset_right = 0.0
 offset_bottom = 0.0
+
+[node name="todo-list2" parent="todo_container" instance=ExtResource("5_tbgi4")]
+visible = false
+layout_mode = 1
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 0.0
+offset_bottom = 0.0
+id = 1
+
+[node name="todo-list3" parent="todo_container" instance=ExtResource("5_tbgi4")]
+visible = false
+layout_mode = 1
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 0.0
+offset_bottom = 0.0
+id = 2
+
+[node name="todo-list4" parent="todo_container" instance=ExtResource("5_tbgi4")]
+visible = false
+layout_mode = 1
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 0.0
+offset_bottom = 0.0
+id = 3
+
+[node name="todo-list5" parent="todo_container" instance=ExtResource("5_tbgi4")]
+visible = false
+layout_mode = 1
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 0.0
+offset_bottom = 0.0
+id = 4
+
+[node name="todo-list6" parent="todo_container" instance=ExtResource("5_tbgi4")]
+visible = false
+layout_mode = 1
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 0.0
+offset_bottom = 0.0
+id = 5
 
 [node name="labels" type="Control" parent="."]
 anchors_preset = 0
@@ -62,10 +136,10 @@ vertical_alignment = 1
 
 [node name="pomo_state" type="Label" parent="labels"]
 layout_mode = 0
-offset_left = 456.0
-offset_right = 696.0
+offset_left = 384.0
+offset_right = 768.0
 offset_bottom = 64.0
-text = "WORK"
+text = "NOT LAUNCHED"
 label_settings = SubResource("LabelSettings_sgp6g")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -100,6 +174,17 @@ label_settings = ExtResource("4_jyhfs")
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="current_page" type="Label" parent="labels"]
+layout_mode = 0
+offset_left = 1088.0
+offset_top = 585.0
+offset_right = 1128.0
+offset_bottom = 625.0
+text = "1"
+label_settings = SubResource("LabelSettings_tipki")
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="buttons" type="Control" parent="."]
 anchors_preset = 0
 offset_right = 40.0
@@ -107,9 +192,12 @@ offset_bottom = 40.0
 
 [node name="toggle_pomo" type="Button" parent="buttons"]
 layout_mode = 0
-offset_left = 448.0
-offset_right = 704.0
+offset_left = 384.0
+offset_right = 768.0
 offset_bottom = 64.0
+theme_override_constants/outline_size = 14
+theme_override_styles/focus = SubResource("StyleBoxEmpty_tbgi4")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_tefeu")
 flat = true
 
 [node name="pause_pomo" type="Button" parent="buttons"]
@@ -117,6 +205,8 @@ layout_mode = 0
 offset_left = 192.0
 offset_right = 320.0
 offset_bottom = 64.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_o6xl0")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_tipki")
 flat = true
 
 [node name="prev" type="Button" parent="buttons"]
@@ -124,6 +214,8 @@ layout_mode = 0
 offset_left = 8.0
 offset_right = 56.0
 offset_bottom = 64.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_85g3d")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_choun")
 flat = true
 
 [node name="next" type="Button" parent="buttons"]
@@ -131,4 +223,15 @@ layout_mode = 0
 offset_left = 1096.0
 offset_right = 1144.0
 offset_bottom = 64.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ya4ey")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_eb6dy")
 flat = true
+
+[node name="pomo_counter" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="pressed" from="buttons/toggle_pomo" to="." method="_on_toggle_pomo_pressed"]
+[connection signal="pressed" from="buttons/pause_pomo" to="." method="_on_pause_pomo_pressed"]
+[connection signal="pressed" from="buttons/prev" to="." method="_on_prev_pressed"]
+[connection signal="pressed" from="buttons/next" to="." method="_on_next_pressed"]
+[connection signal="timeout" from="pomo_counter" to="." method="_on_pomo_counter_timeout"]
