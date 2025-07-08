@@ -31,8 +31,8 @@ var current_pomo_state : pomo_state = pomo_state.NOTLAUNCHED
 
 var pomo_pause_toggle : bool = true # true : pomo will be paused || false : continue
 var pomo_toggle : bool = true # true : pomo will start | false : pomo will stop
-var work_time : int = 1 # 50mn work
-var break_time : int = 1 # 10mn break
+var work_time : int = 50 # 50mn work
+var break_time : int = 10 # 10mn break
 var time_remaining : float
 var format_adjustement_min : String = ""
 var format_adjustement_sec : String = ""
