@@ -34,7 +34,6 @@ var pomo_pause_toggle : bool = true # true : pomo will be paused || false : cont
 var pomo_toggle : bool = true # true : pomo will start | false : pomo will stop
 var work_time : int = 50 # 50mn work
 var break_time : int = 10 # 10mn break
-var time_remaining : float
 var format_adjustement_min : String = ""
 var format_adjustement_sec : String = ""
 var prev_pomo_state : pomo_state
@@ -53,15 +52,19 @@ func _on_change_pomo_pressed() -> void:
 
 	display_pomo()
 
-func start_pomo(): # func that start pomo timer and manage work and break session
-	if current_pomo_state == pomo_state.WORK:
-		current_pomo_state = pomo_state.BREAK
-		pomo_counter.wait_time = break_time * 60 # convert min -> sec
-		pomo_counter.start() # start timer
-	elif current_pomo_state == pomo_state.BREAK or current_pomo_state == pomo_state.NOTLAUNCHED or current_pomo_state == pomo_state.STOPPED:
-		current_pomo_state = pomo_state.WORK
-		pomo_counter.wait_time = work_time * 60 # convert min -> sec
-		pomo_counter.start() # start timer
+func start_pomo(start_value := 0): # func that start pomo timer and manage work and break session
+	if start_value:
+		pomo_counter.wait_time = start_value
+		pomo_counter.start()
+	else:
+		if current_pomo_state == pomo_state.WORK:
+			current_pomo_state = pomo_state.BREAK
+			pomo_counter.wait_time = break_time * 60 # convert min -> sec
+			pomo_counter.start() # start timer
+		elif current_pomo_state == pomo_state.BREAK or current_pomo_state == pomo_state.NOTLAUNCHED or current_pomo_state == pomo_state.STOPPED:
+			current_pomo_state = pomo_state.WORK
+			pomo_counter.wait_time = work_time * 60 # convert min -> sec
+			pomo_counter.start() # start timer
 		
 	
 func stop_pomo(): # func that stop the pomo
@@ -222,13 +225,19 @@ Global
 """
 
 func _ready() -> void:
-	#load_todo()
-	pass
-
-func _process(delta: float) -> void:
+	if Global.pomo_has_been_set:
+		print(Global.global_pomo_counter)
+		start_pomo(Global.global_pomo_counter)
+		current_pomo_state = Global.global_pomo_state
+		Global.pomo_has_been_set = false
+	
+func _physics_process(delta: float) -> void:
 	display_pomo()
 	update_current_date()
 
 
 func _on_button_pressed() -> void:
+	Global.global_pomo_counter = pomo_counter.time_left
+	Global.global_pomo_state = current_pomo_state
+	Global.pomo_has_been_set = true
 	get_tree().change_scene_to_file("res://scenes/calendar.tscn")
