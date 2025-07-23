@@ -1,0 +1,304 @@
+[gd_scene load_steps=6 format=3 uid="uid://boy5ualc1fboj"]
+
+[ext_resource type="FontFile" uid="uid://b3u1oy2aaoo8j" path="res://misc/fonts/MonaspaceNeon-Medium.otf" id="1_nb4pb"]
+[ext_resource type="Script" uid="uid://dkrrd422uiyx4" path="res://scripts/calendar.gd" id="1_o53js"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vrnb8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xnkdq"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_o53js"]
+font = ExtResource("1_nb4pb")
+font_size = 20
+font_color = Color(0.270588, 0.278431, 0.352941, 1)
+
+[node name="calendar" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_o53js")
+
+[node name="background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0666667, 0.0666667, 0.105882, 1)
+
+[node name="tasks_bg" type="ColorRect" parent="."]
+offset_left = 24.0
+offset_top = 408.0
+offset_right = 408.0
+offset_bottom = 776.0
+color = Color(0.117647, 0.117647, 0.180392, 1)
+
+[node name="tasks_bg5" type="ColorRect" parent="."]
+offset_left = 24.0
+offset_top = 24.0
+offset_right = 408.0
+offset_bottom = 392.0
+color = Color(0.117647, 0.117647, 0.180392, 1)
+
+[node name="tasks_bg2" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -216.0
+offset_top = 8.0
+offset_right = 216.0
+offset_bottom = 376.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.117647, 0.117647, 0.180392, 1)
+
+[node name="tasks_bg4" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -216.0
+offset_top = -376.0
+offset_right = 216.0
+offset_bottom = -8.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.117647, 0.117647, 0.180392, 1)
+
+[node name="tasks_bg3" type="ColorRect" parent="."]
+offset_left = 872.0
+offset_top = 408.0
+offset_right = 1256.0
+offset_bottom = 776.0
+color = Color(0.117647, 0.117647, 0.180392, 1)
+
+[node name="tasks_bg6" type="ColorRect" parent="."]
+offset_left = 872.0
+offset_top = 24.0
+offset_right = 1256.0
+offset_bottom = 392.0
+color = Color(0.117647, 0.117647, 0.180392, 1)
+
+[node name="lundi" type="TextEdit" parent="."]
+offset_left = 32.0
+offset_top = 64.0
+offset_right = 400.0
+offset_bottom = 384.0
+theme_override_colors/background_color = Color(0.117647, 0.117647, 0.180392, 1)
+theme_override_colors/font_placeholder_color = Color(0.270588, 0.278431, 0.352941, 1)
+theme_override_colors/font_color = Color(0.803922, 0.839216, 0.956863, 1)
+theme_override_colors/selection_color = Color(0.705882, 0.745098, 0.996078, 1)
+theme_override_colors/font_selected_color = Color(0.0666667, 0.0666667, 0.105882, 1)
+theme_override_colors/caret_background_color = Color(0, 0, 0, 1)
+theme_override_colors/caret_color = Color(0.705882, 0.745098, 0.996078, 1)
+theme_override_constants/line_spacing = -4
+theme_override_constants/caret_width = 10
+theme_override_fonts/font = ExtResource("1_nb4pb")
+theme_override_font_sizes/font_size = 20
+context_menu_enabled = false
+virtual_keyboard_enabled = false
+wrap_mode = 1
+autowrap_mode = 2
+caret_blink = true
+caret_blink_interval = 0.4
+
+[node name="mercredi" type="TextEdit" parent="."]
+offset_left = 880.0
+offset_top = 64.0
+offset_right = 1248.0
+offset_bottom = 384.0
+theme_override_colors/background_color = Color(0.117647, 0.117647, 0.180392, 1)
+theme_override_colors/font_placeholder_color = Color(0.270588, 0.278431, 0.352941, 1)
+theme_override_colors/font_color = Color(0.803922, 0.839216, 0.956863, 1)
+theme_override_colors/selection_color = Color(0.705882, 0.745098, 0.996078, 1)
+theme_override_colors/font_selected_color = Color(0.0666667, 0.0666667, 0.105882, 1)
+theme_override_colors/caret_background_color = Color(0, 0, 0, 1)
+theme_override_colors/caret_color = Color(0.705882, 0.745098, 0.996078, 1)
+theme_override_constants/line_spacing = -4
+theme_override_constants/caret_width = 10
+theme_override_fonts/font = ExtResource("1_nb4pb")
+theme_override_font_sizes/font_size = 20
+context_menu_enabled = false
+virtual_keyboard_enabled = false
+wrap_mode = 1
+autowrap_mode = 2
+caret_blink = true
+caret_blink_interval = 0.4
+
+[node name="weekend" type="TextEdit" parent="."]
+offset_left = 880.0
+offset_top = 448.0
+offset_right = 1248.0
+offset_bottom = 768.0
+theme_override_colors/background_color = Color(0.117647, 0.117647, 0.180392, 1)
+theme_override_colors/font_placeholder_color = Color(0.270588, 0.278431, 0.352941, 1)
+theme_override_colors/font_color = Color(0.803922, 0.839216, 0.956863, 1)
+theme_override_colors/selection_color = Color(0.705882, 0.745098, 0.996078, 1)
+theme_override_colors/font_selected_color = Color(0.0666667, 0.0666667, 0.105882, 1)
+theme_override_colors/caret_background_color = Color(0, 0, 0, 1)
+theme_override_colors/caret_color = Color(0.705882, 0.745098, 0.996078, 1)
+theme_override_constants/line_spacing = -4
+theme_override_constants/caret_width = 10
+theme_override_fonts/font = ExtResource("1_nb4pb")
+theme_override_font_sizes/font_size = 20
+context_menu_enabled = false
+virtual_keyboard_enabled = false
+wrap_mode = 1
+autowrap_mode = 2
+caret_blink = true
+caret_blink_interval = 0.4
+
+[node name="jeudi" type="TextEdit" parent="."]
+offset_left = 32.0
+offset_top = 448.0
+offset_right = 400.0
+offset_bottom = 768.0
+theme_override_colors/background_color = Color(0.117647, 0.117647, 0.180392, 1)
+theme_override_colors/font_placeholder_color = Color(0.270588, 0.278431, 0.352941, 1)
+theme_override_colors/font_color = Color(0.803922, 0.839216, 0.956863, 1)
+theme_override_colors/selection_color = Color(0.705882, 0.745098, 0.996078, 1)
+theme_override_colors/font_selected_color = Color(0.0666667, 0.0666667, 0.105882, 1)
+theme_override_colors/caret_background_color = Color(0, 0, 0, 1)
+theme_override_colors/caret_color = Color(0.705882, 0.745098, 0.996078, 1)
+theme_override_constants/line_spacing = -4
+theme_override_constants/caret_width = 10
+theme_override_fonts/font = ExtResource("1_nb4pb")
+theme_override_font_sizes/font_size = 20
+context_menu_enabled = false
+virtual_keyboard_enabled = false
+wrap_mode = 1
+autowrap_mode = 2
+caret_blink = true
+caret_blink_interval = 0.4
+
+[node name="vendredi" type="TextEdit" parent="."]
+offset_left = 432.0
+offset_top = 448.0
+offset_right = 848.0
+offset_bottom = 768.0
+theme_override_colors/background_color = Color(0.117647, 0.117647, 0.180392, 1)
+theme_override_colors/font_placeholder_color = Color(0.270588, 0.278431, 0.352941, 1)
+theme_override_colors/font_color = Color(0.803922, 0.839216, 0.956863, 1)
+theme_override_colors/selection_color = Color(0.705882, 0.745098, 0.996078, 1)
+theme_override_colors/font_selected_color = Color(0.0666667, 0.0666667, 0.105882, 1)
+theme_override_colors/caret_background_color = Color(0, 0, 0, 1)
+theme_override_colors/caret_color = Color(0.705882, 0.745098, 0.996078, 1)
+theme_override_constants/line_spacing = -4
+theme_override_constants/caret_width = 10
+theme_override_fonts/font = ExtResource("1_nb4pb")
+theme_override_font_sizes/font_size = 20
+context_menu_enabled = false
+virtual_keyboard_enabled = false
+wrap_mode = 1
+autowrap_mode = 2
+caret_blink = true
+caret_blink_interval = 0.4
+
+[node name="mardi" type="TextEdit" parent="."]
+offset_left = 432.0
+offset_top = 64.0
+offset_right = 848.0
+offset_bottom = 384.0
+theme_override_colors/background_color = Color(0.117647, 0.117647, 0.180392, 1)
+theme_override_colors/font_placeholder_color = Color(0.270588, 0.278431, 0.352941, 1)
+theme_override_colors/font_color = Color(0.803922, 0.839216, 0.956863, 1)
+theme_override_colors/selection_color = Color(0.705882, 0.745098, 0.996078, 1)
+theme_override_colors/font_selected_color = Color(0.0666667, 0.0666667, 0.105882, 1)
+theme_override_colors/caret_background_color = Color(0, 0, 0, 1)
+theme_override_colors/caret_color = Color(0.705882, 0.745098, 0.996078, 1)
+theme_override_constants/line_spacing = -4
+theme_override_constants/caret_width = 10
+theme_override_fonts/font = ExtResource("1_nb4pb")
+theme_override_font_sizes/font_size = 20
+context_menu_enabled = false
+virtual_keyboard_enabled = false
+wrap_mode = 1
+autowrap_mode = 2
+caret_blink = true
+caret_blink_interval = 0.4
+
+[node name="change" type="Button" parent="."]
+layout_mode = 0
+offset_top = 760.0
+offset_right = 40.0
+offset_bottom = 799.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_vrnb8")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_xnkdq")
+flat = true
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 880.0
+offset_top = 32.0
+offset_right = 1248.0
+offset_bottom = 56.0
+text = "/* mercredi */"
+label_settings = SubResource("LabelSettings_o53js")
+horizontal_alignment = 1
+
+[node name="Label4" type="Label" parent="."]
+layout_mode = 0
+offset_left = 880.0
+offset_top = 416.0
+offset_right = 1248.0
+offset_bottom = 440.0
+text = "/* weekend */"
+label_settings = SubResource("LabelSettings_o53js")
+horizontal_alignment = 1
+
+[node name="Label5" type="Label" parent="."]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 416.0
+offset_right = 400.0
+offset_bottom = 440.0
+text = "/* jeudi */"
+label_settings = SubResource("LabelSettings_o53js")
+horizontal_alignment = 1
+
+[node name="Label6" type="Label" parent="."]
+layout_mode = 0
+offset_left = 432.0
+offset_top = 416.0
+offset_right = 848.0
+offset_bottom = 440.0
+text = "/* vendredi */"
+label_settings = SubResource("LabelSettings_o53js")
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_left = 432.0
+offset_top = 32.0
+offset_right = 848.0
+offset_bottom = 56.0
+text = "/* mardi */"
+label_settings = SubResource("LabelSettings_o53js")
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="."]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 32.0
+offset_right = 400.0
+offset_bottom = 56.0
+text = "/* lundi */"
+label_settings = SubResource("LabelSettings_o53js")
+horizontal_alignment = 1
+
+[connection signal="text_changed" from="lundi" to="." method="_on_lundi_text_changed"]
+[connection signal="text_changed" from="mercredi" to="." method="_on_mercredi_text_changed"]
+[connection signal="text_changed" from="weekend" to="." method="_on_weekend_text_changed"]
+[connection signal="text_changed" from="jeudi" to="." method="_on_jeudi_text_changed"]
+[connection signal="text_changed" from="vendredi" to="." method="_on_vendredi_text_changed"]
+[connection signal="text_changed" from="mardi" to="." method="_on_mardi_text_changed"]
+[connection signal="pressed" from="change" to="." method="_on_change_pressed"]

@@ -14,6 +14,7 @@ Nodes importation
 @onready var current_date_label: Label = $labels/current_date
 @onready var prev_page_label: Label = $labels/prev_label
 @onready var pomo_counter: Timer = $pomo_counter
+@onready var change_pomo: Button = $buttons/change_pomo
 
 
 """
@@ -38,6 +39,19 @@ var format_adjustement_min : String = ""
 var format_adjustement_sec : String = ""
 var prev_pomo_state : pomo_state
 
+
+func _on_change_pomo_pressed() -> void:
+	if work_time == 50:
+		work_time = 25
+	else:
+		work_time = 50
+		
+	if break_time == 10:
+		break_time = 5
+	else:
+		break_time = 10
+
+	display_pomo()
 
 func start_pomo(): # func that start pomo timer and manage work and break session
 	if current_pomo_state == pomo_state.WORK:
@@ -69,7 +83,7 @@ func display_pomo(): # func that display pomo on the label
 			pomo_state_label.text = "PAUSED"
 	# then pomo timer
 	if current_pomo_state == pomo_state.NOTLAUNCHED or current_pomo_state == pomo_state.STOPPED:
-		pomo_value_label.text = "50:00"
+		pomo_value_label.text = str(work_time) + ":00"
 	else:
 		if (int(pomo_counter.time_left) / 60) < 10:
 			format_adjustement_min = "0"
@@ -214,3 +228,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	display_pomo()
 	update_current_date()
+
+
+func _on_button_pressed() -> void:
+	get_tree().change_scene_to_file("res://scenes/calendar.tscn")

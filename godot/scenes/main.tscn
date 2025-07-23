@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://cgvbuopr2uy37"]
+[gd_scene load_steps=24 format=3 uid="uid://cgvbuopr2uy37"]
 
 [ext_resource type="FontFile" uid="uid://btwtvftlypcuy" path="res://misc/fonts/NotoSerif-Medium.ttf" id="1_jyhfs"]
 [ext_resource type="Script" uid="uid://b3r46rfhp5h3h" path="res://scripts/main.gd" id="1_tefeu"]
@@ -43,6 +43,14 @@ font_color = Color(0.192157, 0.196078, 0.266667, 1)
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ya4ey"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_eb6dy"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_trceg"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_a8y0u"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jkv2x"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_jbj1t"]
 
 [node name="main" type="Control"]
 layout_mode = 3
@@ -215,6 +223,25 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_ya4ey")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_eb6dy")
 flat = true
 
+[node name="change_pomo" type="Button" parent="buttons"]
+layout_mode = 0
+offset_left = 928.0
+offset_top = 8.0
+offset_right = 1048.0
+offset_bottom = 56.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_trceg")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_a8y0u")
+flat = true
+
+[node name="Button" type="Button" parent="buttons"]
+layout_mode = 0
+offset_top = 760.0
+offset_right = 40.0
+offset_bottom = 800.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_jkv2x")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_jbj1t")
+flat = true
+
 [node name="pomo_counter" type="Timer" parent="."]
 one_shot = true
 
@@ -222,4 +249,6 @@ one_shot = true
 [connection signal="pressed" from="buttons/pause_pomo" to="." method="_on_pause_pomo_pressed"]
 [connection signal="pressed" from="buttons/prev" to="." method="_on_prev_pressed"]
 [connection signal="pressed" from="buttons/next" to="." method="_on_next_pressed"]
+[connection signal="pressed" from="buttons/change_pomo" to="." method="_on_change_pomo_pressed"]
+[connection signal="pressed" from="buttons/Button" to="." method="_on_button_pressed"]
 [connection signal="timeout" from="pomo_counter" to="." method="_on_pomo_counter_timeout"]
