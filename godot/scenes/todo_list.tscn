@@ -20,7 +20,7 @@ script = ExtResource("1_ash3i")
 layout_mode = 0
 offset_left = 16.0
 offset_top = 64.0
-offset_right = 1256.0
+offset_right = 1248.0
 offset_bottom = 768.0
 color = Color(0.117647, 0.117647, 0.180392, 1)
 
@@ -28,7 +28,7 @@ color = Color(0.117647, 0.117647, 0.180392, 1)
 layout_mode = 0
 offset_left = 24.0
 offset_top = 72.0
-offset_right = 1248.0
+offset_right = 1240.0
 offset_bottom = 760.0
 theme_override_colors/background_color = Color(0.117647, 0.117647, 0.180392, 1)
 theme_override_colors/font_placeholder_color = Color(0.270588, 0.278431, 0.352941, 1)

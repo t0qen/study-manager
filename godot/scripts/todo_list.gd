@@ -1,5 +1,7 @@
 extends Control
 
+var global_font_size : int = 20
+var current_font_size : int = global_font_size
 """
 Save & Load
 """
@@ -45,3 +47,13 @@ Global
 
 func _ready() -> void:
 	load_content()
+
+func _physics_process(delta: float) -> void:
+	if Input.is_action_just_pressed("decrease_font"):
+		current_font_size -= 1
+		$tasks.add_theme_font_size_override("font_size", current_font_size)
+	if Input.is_action_just_pressed("increase_font"):
+		current_font_size += 1
+		$tasks.add_theme_font_size_override("font_size", current_font_size)
+	if Input.is_action_just_pressed("reset_font_size"):
+		$tasks.add_theme_font_size_override("font_size", global_font_size)

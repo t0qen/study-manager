@@ -1,16 +1,58 @@
-[gd_scene load_steps=6 format=3 uid="uid://boy5ualc1fboj"]
+[gd_scene load_steps=18 format=3 uid="uid://boy5ualc1fboj"]
 
 [ext_resource type="FontFile" uid="uid://b3u1oy2aaoo8j" path="res://misc/fonts/MonaspaceNeon-Medium.otf" id="1_nb4pb"]
 [ext_resource type="Script" uid="uid://dkrrd422uiyx4" path="res://scripts/calendar.gd" id="1_o53js"]
+[ext_resource type="PackedScene" uid="uid://duh117iy3yl2l" path="res://scenes/todo_list.tscn" id="3_vrnb8"]
+[ext_resource type="LabelSettings" uid="uid://cjilq4k2rqe3r" path="res://misc/fonts_settings/next_prev_labels.tres" id="4_l5pxe"]
+[ext_resource type="FontFile" uid="uid://csxr0f0ecj00g" path="res://misc/fonts/MonaspaceXenon-Medium.otf" id="4_yqp0o"]
+[ext_resource type="FontFile" uid="uid://wtjo68m12553" path="res://misc/fonts/MonaspaceArgon-Medium.otf" id="5_l5pxe"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_l5pxe"]
+font = ExtResource("1_nb4pb")
+font_size = 20
+font_color = Color(0.270588, 0.278431, 0.352941, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_eimfn"]
+font = ExtResource("1_nb4pb")
+font_size = 20
+font_color = Color(0.270588, 0.278431, 0.352941, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_uucte"]
+font = ExtResource("1_nb4pb")
+font_size = 20
+font_color = Color(0.270588, 0.278431, 0.352941, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_bapbm"]
+font = ExtResource("1_nb4pb")
+font_size = 20
+font_color = Color(0.270588, 0.278431, 0.352941, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_h1qe8"]
+font = ExtResource("1_nb4pb")
+font_size = 20
+font_color = Color(0.270588, 0.278431, 0.352941, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_j1ae0"]
+font = ExtResource("1_nb4pb")
+font_size = 20
+font_color = Color(0.270588, 0.278431, 0.352941, 1)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vrnb8"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_xnkdq"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_o53js"]
+[sub_resource type="LabelSettings" id="LabelSettings_sio1q"]
 font = ExtResource("1_nb4pb")
-font_size = 20
-font_color = Color(0.270588, 0.278431, 0.352941, 1)
+font_size = 34
+font_color = Color(0.729412, 0.760784, 0.870588, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_bud5a"]
+font = ExtResource("4_yqp0o")
+font_size = 42
+
+[sub_resource type="LabelSettings" id="LabelSettings_vqkwy"]
+font = ExtResource("5_l5pxe")
+font_size = 37
 
 [node name="calendar" type="Control"]
 layout_mode = 3
@@ -30,74 +72,86 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.0666667, 0.0666667, 0.105882, 1)
 
-[node name="tasks_bg" type="ColorRect" parent="."]
-layout_mode = 0
-offset_left = 24.0
-offset_top = 408.0
-offset_right = 408.0
-offset_bottom = 776.0
-color = Color(0.117647, 0.117647, 0.180392, 1)
+[node name="mercredi" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
 
-[node name="tasks_bg5" type="ColorRect" parent="."]
-layout_mode = 0
-offset_left = 24.0
-offset_top = 24.0
-offset_right = 408.0
-offset_bottom = 392.0
-color = Color(0.117647, 0.117647, 0.180392, 1)
-
-[node name="tasks_bg2" type="ColorRect" parent="."]
+[node name="tasks_bg6" type="ColorRect" parent="mercredi"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -216.0
-offset_top = 8.0
-offset_right = 216.0
-offset_bottom = 376.0
+offset_left = 836.0
+offset_top = 52.0
+offset_right = 1236.0
+offset_bottom = 396.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.117647, 0.117647, 0.180392, 1)
 
-[node name="tasks_bg4" type="ColorRect" parent="."]
+[node name="mercredi" type="TextEdit" parent="mercredi"]
+layout_mode = 0
+offset_left = 864.0
+offset_top = 112.0
+offset_right = 1248.0
+offset_bottom = 408.0
+theme_override_colors/background_color = Color(0.117647, 0.117647, 0.180392, 1)
+theme_override_colors/font_placeholder_color = Color(0.270588, 0.278431, 0.352941, 1)
+theme_override_colors/font_color = Color(0.803922, 0.839216, 0.956863, 1)
+theme_override_colors/selection_color = Color(0.705882, 0.745098, 0.996078, 1)
+theme_override_colors/font_selected_color = Color(0.0666667, 0.0666667, 0.105882, 1)
+theme_override_colors/caret_background_color = Color(0, 0, 0, 1)
+theme_override_colors/caret_color = Color(0.705882, 0.745098, 0.996078, 1)
+theme_override_constants/line_spacing = -4
+theme_override_constants/caret_width = 10
+theme_override_fonts/font = ExtResource("1_nb4pb")
+theme_override_font_sizes/font_size = 20
+context_menu_enabled = false
+virtual_keyboard_enabled = false
+wrap_mode = 1
+autowrap_mode = 2
+caret_blink = true
+caret_blink_interval = 0.4
+
+[node name="mercredi_label" type="Label" parent="mercredi"]
+layout_mode = 0
+offset_left = 864.0
+offset_top = 80.0
+offset_right = 1248.0
+offset_bottom = 104.0
+text = "/* mercredi */"
+label_settings = SubResource("LabelSettings_l5pxe")
+horizontal_alignment = 1
+
+[node name="lundi" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="tasks_bg5" type="ColorRect" parent="lundi"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -216.0
-offset_top = -376.0
-offset_right = 216.0
-offset_bottom = -8.0
+offset_left = 4.0
+offset_top = 52.0
+offset_right = 404.0
+offset_bottom = 396.0
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.117647, 0.117647, 0.180392, 1)
 
-[node name="tasks_bg3" type="ColorRect" parent="."]
-layout_mode = 0
-offset_left = 872.0
-offset_top = 408.0
-offset_right = 1256.0
-offset_bottom = 776.0
-color = Color(0.117647, 0.117647, 0.180392, 1)
-
-[node name="tasks_bg6" type="ColorRect" parent="."]
-layout_mode = 0
-offset_left = 872.0
-offset_top = 24.0
-offset_right = 1256.0
-offset_bottom = 392.0
-color = Color(0.117647, 0.117647, 0.180392, 1)
-
-[node name="lundi" type="TextEdit" parent="."]
+[node name="lundi" type="TextEdit" parent="lundi"]
 layout_mode = 0
 offset_left = 32.0
-offset_top = 64.0
-offset_right = 400.0
-offset_bottom = 384.0
+offset_top = 112.0
+offset_right = 416.0
+offset_bottom = 408.0
 theme_override_colors/background_color = Color(0.117647, 0.117647, 0.180392, 1)
 theme_override_colors/font_placeholder_color = Color(0.270588, 0.278431, 0.352941, 1)
 theme_override_colors/font_color = Color(0.803922, 0.839216, 0.956863, 1)
@@ -116,60 +170,206 @@ autowrap_mode = 2
 caret_blink = true
 caret_blink_interval = 0.4
 
-[node name="mercredi" type="TextEdit" parent="."]
-layout_mode = 0
-offset_left = 880.0
-offset_top = 64.0
-offset_right = 1248.0
-offset_bottom = 384.0
-theme_override_colors/background_color = Color(0.117647, 0.117647, 0.180392, 1)
-theme_override_colors/font_placeholder_color = Color(0.270588, 0.278431, 0.352941, 1)
-theme_override_colors/font_color = Color(0.803922, 0.839216, 0.956863, 1)
-theme_override_colors/selection_color = Color(0.705882, 0.745098, 0.996078, 1)
-theme_override_colors/font_selected_color = Color(0.0666667, 0.0666667, 0.105882, 1)
-theme_override_colors/caret_background_color = Color(0, 0, 0, 1)
-theme_override_colors/caret_color = Color(0.705882, 0.745098, 0.996078, 1)
-theme_override_constants/line_spacing = -4
-theme_override_constants/caret_width = 10
-theme_override_fonts/font = ExtResource("1_nb4pb")
-theme_override_font_sizes/font_size = 20
-context_menu_enabled = false
-virtual_keyboard_enabled = false
-wrap_mode = 1
-autowrap_mode = 2
-caret_blink = true
-caret_blink_interval = 0.4
-
-[node name="weekend" type="TextEdit" parent="."]
-layout_mode = 0
-offset_left = 880.0
-offset_top = 448.0
-offset_right = 1248.0
-offset_bottom = 768.0
-theme_override_colors/background_color = Color(0.117647, 0.117647, 0.180392, 1)
-theme_override_colors/font_placeholder_color = Color(0.270588, 0.278431, 0.352941, 1)
-theme_override_colors/font_color = Color(0.803922, 0.839216, 0.956863, 1)
-theme_override_colors/selection_color = Color(0.705882, 0.745098, 0.996078, 1)
-theme_override_colors/font_selected_color = Color(0.0666667, 0.0666667, 0.105882, 1)
-theme_override_colors/caret_background_color = Color(0, 0, 0, 1)
-theme_override_colors/caret_color = Color(0.705882, 0.745098, 0.996078, 1)
-theme_override_constants/line_spacing = -4
-theme_override_constants/caret_width = 10
-theme_override_fonts/font = ExtResource("1_nb4pb")
-theme_override_font_sizes/font_size = 20
-context_menu_enabled = false
-virtual_keyboard_enabled = false
-wrap_mode = 1
-autowrap_mode = 2
-caret_blink = true
-caret_blink_interval = 0.4
-
-[node name="jeudi" type="TextEdit" parent="."]
+[node name="lundi_label" type="Label" parent="lundi"]
 layout_mode = 0
 offset_left = 32.0
-offset_top = 448.0
+offset_top = 80.0
+offset_right = 416.0
+offset_bottom = 104.0
+text = "/* lundi */"
+label_settings = SubResource("LabelSettings_eimfn")
+horizontal_alignment = 1
+
+[node name="jeudi" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="tasks_bg7" type="ColorRect" parent="jeudi"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 4.0
+offset_top = 412.0
+offset_right = 404.0
+offset_bottom = 756.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.117647, 0.117647, 0.180392, 1)
+
+[node name="jeudi" type="TextEdit" parent="jeudi"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 472.0
+offset_right = 416.0
+offset_bottom = 768.0
+theme_override_colors/background_color = Color(0.117647, 0.117647, 0.180392, 1)
+theme_override_colors/font_placeholder_color = Color(0.270588, 0.278431, 0.352941, 1)
+theme_override_colors/font_color = Color(0.803922, 0.839216, 0.956863, 1)
+theme_override_colors/selection_color = Color(0.705882, 0.745098, 0.996078, 1)
+theme_override_colors/font_selected_color = Color(0.0666667, 0.0666667, 0.105882, 1)
+theme_override_colors/caret_background_color = Color(0, 0, 0, 1)
+theme_override_colors/caret_color = Color(0.705882, 0.745098, 0.996078, 1)
+theme_override_constants/line_spacing = -4
+theme_override_constants/caret_width = 10
+theme_override_fonts/font = ExtResource("1_nb4pb")
+theme_override_font_sizes/font_size = 20
+context_menu_enabled = false
+virtual_keyboard_enabled = false
+wrap_mode = 1
+autowrap_mode = 2
+caret_blink = true
+caret_blink_interval = 0.4
+
+[node name="jeudi_label" type="Label" parent="jeudi"]
+layout_mode = 0
+offset_left = 32.0
+offset_top = 440.0
+offset_right = 416.0
+offset_bottom = 464.0
+text = "/* jeudi */"
+label_settings = SubResource("LabelSettings_uucte")
+horizontal_alignment = 1
+
+[node name="weekend" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="bg" type="ColorRect" parent="weekend"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 836.0
+offset_top = 412.0
+offset_right = 1236.0
+offset_bottom = 756.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.117647, 0.117647, 0.180392, 1)
+
+[node name="weekend" type="TextEdit" parent="weekend"]
+layout_mode = 0
+offset_left = 864.0
+offset_top = 472.0
+offset_right = 1248.0
+offset_bottom = 768.0
+theme_override_colors/background_color = Color(0.117647, 0.117647, 0.180392, 1)
+theme_override_colors/font_placeholder_color = Color(0.270588, 0.278431, 0.352941, 1)
+theme_override_colors/font_color = Color(0.803922, 0.839216, 0.956863, 1)
+theme_override_colors/selection_color = Color(0.705882, 0.745098, 0.996078, 1)
+theme_override_colors/font_selected_color = Color(0.0666667, 0.0666667, 0.105882, 1)
+theme_override_colors/caret_background_color = Color(0, 0, 0, 1)
+theme_override_colors/caret_color = Color(0.705882, 0.745098, 0.996078, 1)
+theme_override_constants/line_spacing = -4
+theme_override_constants/caret_width = 10
+theme_override_fonts/font = ExtResource("1_nb4pb")
+theme_override_font_sizes/font_size = 20
+context_menu_enabled = false
+virtual_keyboard_enabled = false
+wrap_mode = 1
+autowrap_mode = 2
+caret_blink = true
+caret_blink_interval = 0.4
+
+[node name="weekend_label" type="Label" parent="weekend"]
+layout_mode = 0
+offset_left = 864.0
+offset_top = 440.0
+offset_right = 1248.0
+offset_bottom = 464.0
+text = "/* weekend */"
+label_settings = SubResource("LabelSettings_bapbm")
+horizontal_alignment = 1
+
+[node name="vendredi" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="tasks_bg5" type="ColorRect" parent="vendredi"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 420.0
+offset_top = 412.0
+offset_right = 820.0
+offset_bottom = 756.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.117647, 0.117647, 0.180392, 1)
+
+[node name="vendredi" type="TextEdit" parent="vendredi"]
+layout_mode = 0
+offset_left = 448.0
+offset_top = 472.0
+offset_right = 832.0
+offset_bottom = 768.0
+theme_override_colors/background_color = Color(0.117647, 0.117647, 0.180392, 1)
+theme_override_colors/font_placeholder_color = Color(0.270588, 0.278431, 0.352941, 1)
+theme_override_colors/font_color = Color(0.803922, 0.839216, 0.956863, 1)
+theme_override_colors/selection_color = Color(0.705882, 0.745098, 0.996078, 1)
+theme_override_colors/font_selected_color = Color(0.0666667, 0.0666667, 0.105882, 1)
+theme_override_colors/caret_background_color = Color(0, 0, 0, 1)
+theme_override_colors/caret_color = Color(0.705882, 0.745098, 0.996078, 1)
+theme_override_constants/line_spacing = -4
+theme_override_constants/caret_width = 10
+theme_override_fonts/font = ExtResource("1_nb4pb")
+theme_override_font_sizes/font_size = 20
+context_menu_enabled = false
+virtual_keyboard_enabled = false
+wrap_mode = 1
+autowrap_mode = 2
+caret_blink = true
+caret_blink_interval = 0.4
+
+[node name="vendredi_label" type="Label" parent="vendredi"]
+layout_mode = 0
+offset_left = 448.0
+offset_top = 440.0
+offset_right = 832.0
+offset_bottom = 464.0
+text = "/* vendredi */"
+label_settings = SubResource("LabelSettings_h1qe8")
+horizontal_alignment = 1
+
+[node name="mardi" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 360.0
+offset_top = 40.0
 offset_right = 400.0
-offset_bottom = 768.0
+offset_bottom = 80.0
+
+[node name="tasks_bg4" type="ColorRect" parent="mardi"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 60.0
+offset_top = 12.0
+offset_right = 460.0
+offset_bottom = 356.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.117647, 0.117647, 0.180392, 1)
+
+[node name="mardi" type="TextEdit" parent="mardi"]
+layout_mode = 0
+offset_left = 88.0
+offset_top = 72.0
+offset_right = 472.0
+offset_bottom = 368.0
 theme_override_colors/background_color = Color(0.117647, 0.117647, 0.180392, 1)
 theme_override_colors/font_placeholder_color = Color(0.270588, 0.278431, 0.352941, 1)
 theme_override_colors/font_color = Color(0.803922, 0.839216, 0.956863, 1)
@@ -188,127 +388,82 @@ autowrap_mode = 2
 caret_blink = true
 caret_blink_interval = 0.4
 
-[node name="vendredi" type="TextEdit" parent="."]
+[node name="mardi_label" type="Label" parent="mardi"]
 layout_mode = 0
-offset_left = 432.0
-offset_top = 448.0
-offset_right = 848.0
-offset_bottom = 768.0
-theme_override_colors/background_color = Color(0.117647, 0.117647, 0.180392, 1)
-theme_override_colors/font_placeholder_color = Color(0.270588, 0.278431, 0.352941, 1)
-theme_override_colors/font_color = Color(0.803922, 0.839216, 0.956863, 1)
-theme_override_colors/selection_color = Color(0.705882, 0.745098, 0.996078, 1)
-theme_override_colors/font_selected_color = Color(0.0666667, 0.0666667, 0.105882, 1)
-theme_override_colors/caret_background_color = Color(0, 0, 0, 1)
-theme_override_colors/caret_color = Color(0.705882, 0.745098, 0.996078, 1)
-theme_override_constants/line_spacing = -4
-theme_override_constants/caret_width = 10
-theme_override_fonts/font = ExtResource("1_nb4pb")
-theme_override_font_sizes/font_size = 20
-context_menu_enabled = false
-virtual_keyboard_enabled = false
-wrap_mode = 1
-autowrap_mode = 2
-caret_blink = true
-caret_blink_interval = 0.4
-
-[node name="mardi" type="TextEdit" parent="."]
-layout_mode = 0
-offset_left = 432.0
-offset_top = 64.0
-offset_right = 848.0
-offset_bottom = 384.0
-theme_override_colors/background_color = Color(0.117647, 0.117647, 0.180392, 1)
-theme_override_colors/font_placeholder_color = Color(0.270588, 0.278431, 0.352941, 1)
-theme_override_colors/font_color = Color(0.803922, 0.839216, 0.956863, 1)
-theme_override_colors/selection_color = Color(0.705882, 0.745098, 0.996078, 1)
-theme_override_colors/font_selected_color = Color(0.0666667, 0.0666667, 0.105882, 1)
-theme_override_colors/caret_background_color = Color(0, 0, 0, 1)
-theme_override_colors/caret_color = Color(0.705882, 0.745098, 0.996078, 1)
-theme_override_constants/line_spacing = -4
-theme_override_constants/caret_width = 10
-theme_override_fonts/font = ExtResource("1_nb4pb")
-theme_override_font_sizes/font_size = 20
-context_menu_enabled = false
-virtual_keyboard_enabled = false
-wrap_mode = 1
-autowrap_mode = 2
-caret_blink = true
-caret_blink_interval = 0.4
+offset_left = 88.0
+offset_top = 40.0
+offset_right = 472.0
+offset_bottom = 64.0
+text = "/* mardi */"
+label_settings = SubResource("LabelSettings_j1ae0")
+horizontal_alignment = 1
 
 [node name="change" type="Button" parent="."]
 layout_mode = 0
-offset_top = 760.0
-offset_right = 40.0
-offset_bottom = 799.0
+offset_left = 1216.0
+offset_right = 1272.0
+offset_bottom = 72.0
 theme_override_styles/focus = SubResource("StyleBoxEmpty_vrnb8")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_xnkdq")
 flat = true
 
-[node name="Label" type="Label" parent="."]
-layout_mode = 0
-offset_left = 880.0
-offset_top = 32.0
-offset_right = 1248.0
-offset_bottom = 56.0
-text = "/* mercredi */"
-label_settings = SubResource("LabelSettings_o53js")
-horizontal_alignment = 1
+[node name="todo-list" parent="." instance=ExtResource("3_vrnb8")]
+visible = false
+layout_mode = 1
+offset_top = 8.0
+offset_bottom = 8.0
 
-[node name="Label4" type="Label" parent="."]
-layout_mode = 0
-offset_left = 880.0
-offset_top = 416.0
-offset_right = 1248.0
-offset_bottom = 440.0
-text = "/* weekend */"
-label_settings = SubResource("LabelSettings_o53js")
-horizontal_alignment = 1
+[node name="label" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
 
-[node name="Label5" type="Label" parent="."]
-layout_mode = 0
-offset_left = 32.0
-offset_top = 416.0
-offset_right = 400.0
-offset_bottom = 440.0
-text = "/* jeudi */"
-label_settings = SubResource("LabelSettings_o53js")
+[node name="next_label" type="Label" parent="label"]
+offset_left = 1224.0
+offset_right = 1272.0
+offset_bottom = 64.0
+text = ">"
+label_settings = ExtResource("4_l5pxe")
 horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="Label6" type="Label" parent="."]
-layout_mode = 0
-offset_left = 432.0
-offset_top = 416.0
-offset_right = 848.0
-offset_bottom = 440.0
-text = "/* vendredi */"
-label_settings = SubResource("LabelSettings_o53js")
+[node name="current_date" type="Label" parent="label"]
+offset_left = 1000.0
+offset_right = 1112.0
+offset_bottom = 72.0
+text = "10:53"
+label_settings = SubResource("LabelSettings_sio1q")
 horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="Label2" type="Label" parent="."]
-layout_mode = 0
-offset_left = 432.0
-offset_top = 32.0
-offset_right = 848.0
-offset_bottom = 56.0
-text = "/* mardi */"
-label_settings = SubResource("LabelSettings_o53js")
+[node name="date" type="Label" parent="label"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 468.0
+offset_right = 772.0
+offset_bottom = 72.0
+grow_horizontal = 2
+text = "08/08/2010"
+label_settings = SubResource("LabelSettings_bud5a")
 horizontal_alignment = 1
+vertical_alignment = 1
 
-[node name="Label3" type="Label" parent="."]
-layout_mode = 0
-offset_left = 32.0
-offset_top = 32.0
-offset_right = 400.0
-offset_bottom = 56.0
-text = "/* lundi */"
-label_settings = SubResource("LabelSettings_o53js")
+[node name="day" type="Label" parent="label"]
+layout_mode = 1
+offset_left = 128.0
+offset_right = 320.0
+offset_bottom = 72.0
+text = "LUNDI"
+label_settings = SubResource("LabelSettings_vqkwy")
 horizontal_alignment = 1
+vertical_alignment = 1
 
-[connection signal="text_changed" from="lundi" to="." method="_on_lundi_text_changed"]
-[connection signal="text_changed" from="mercredi" to="." method="_on_mercredi_text_changed"]
-[connection signal="text_changed" from="weekend" to="." method="_on_weekend_text_changed"]
-[connection signal="text_changed" from="jeudi" to="." method="_on_jeudi_text_changed"]
-[connection signal="text_changed" from="vendredi" to="." method="_on_vendredi_text_changed"]
-[connection signal="text_changed" from="mardi" to="." method="_on_mardi_text_changed"]
+[connection signal="text_changed" from="mercredi/mercredi" to="." method="_on_mercredi_text_changed"]
+[connection signal="text_changed" from="lundi/lundi" to="." method="_on_lundi_text_changed"]
+[connection signal="text_changed" from="jeudi/jeudi" to="." method="_on_jeudi_text_changed"]
+[connection signal="text_changed" from="weekend/weekend" to="." method="_on_weekend_text_changed"]
+[connection signal="text_changed" from="vendredi/vendredi" to="." method="_on_vendredi_text_changed"]
+[connection signal="text_changed" from="mardi/mardi" to="." method="_on_mardi_text_changed"]
 [connection signal="pressed" from="change" to="." method="_on_change_pressed"]

@@ -125,11 +125,12 @@ func _on_pomo_counter_timeout() -> void: # called when timer finished
 """
 Current date
 """
-var datetime = Time.get_datetime_dict_from_system()
+
 var hours 
 var min 
 
 func update_current_date():
+	var datetime = Time.get_datetime_dict_from_system()
 	hours = datetime.hour
 	min = datetime.minute
 	
@@ -209,9 +210,16 @@ func display_todo_list():
 			
 	current_page.text =  str(current_todo_list + 1)
 
+	
+
 func _on_prev_pressed() -> void:
 	if current_todo_list > 0:
 		current_todo_list -= 1
+	else:
+		Global.global_pomo_counter = pomo_counter.time_left
+		Global.global_pomo_state = current_pomo_state
+		Global.pomo_has_been_set = true
+		get_tree().change_scene_to_file("res://scenes/calendar.tscn")
 	display_todo_list()
 
 func _on_next_pressed() -> void:
@@ -234,10 +242,3 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	display_pomo()
 	update_current_date()
-
-
-func _on_button_pressed() -> void:
-	Global.global_pomo_counter = pomo_counter.time_left
-	Global.global_pomo_state = current_pomo_state
-	Global.pomo_has_been_set = true
-	get_tree().change_scene_to_file("res://scenes/calendar.tscn")
