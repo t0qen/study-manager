@@ -31,7 +31,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta: float) -> void:
 	update_current_date()
-
+		
 
 func _on_lundi_text_changed() -> void:
 	save_content("lundi")
@@ -122,4 +122,4 @@ func update_current_date():
 	prev_day = day
 	
 	
-	 
+	

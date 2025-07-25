@@ -8,7 +8,6 @@ Save & Load
 
 @export var id = 0
 @onready var tasks: TextEdit = $tasks
-@onready var main: TextEdit = $main
 
 #const save_path
 func save_content(node : TextEdit):

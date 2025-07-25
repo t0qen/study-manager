@@ -419,6 +419,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="next_label" type="Label" parent="label"]
+layout_mode = 0
 offset_left = 1224.0
 offset_right = 1272.0
 offset_bottom = 64.0
@@ -428,6 +429,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="current_date" type="Label" parent="label"]
+layout_mode = 0
 offset_left = 1000.0
 offset_right = 1112.0
 offset_bottom = 72.0
