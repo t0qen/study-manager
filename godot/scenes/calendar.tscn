@@ -1,8 +1,7 @@
-[gd_scene load_steps=18 format=3 uid="uid://boy5ualc1fboj"]
+[gd_scene load_steps=19 format=3 uid="uid://boy5ualc1fboj"]
 
 [ext_resource type="FontFile" uid="uid://b3u1oy2aaoo8j" path="res://misc/fonts/MonaspaceNeon-Medium.otf" id="1_nb4pb"]
 [ext_resource type="Script" uid="uid://dkrrd422uiyx4" path="res://scripts/calendar.gd" id="1_o53js"]
-[ext_resource type="PackedScene" uid="uid://duh117iy3yl2l" path="res://scenes/todo_list.tscn" id="3_vrnb8"]
 [ext_resource type="LabelSettings" uid="uid://cjilq4k2rqe3r" path="res://misc/fonts_settings/next_prev_labels.tres" id="4_l5pxe"]
 [ext_resource type="FontFile" uid="uid://csxr0f0ecj00g" path="res://misc/fonts/MonaspaceXenon-Medium.otf" id="4_yqp0o"]
 [ext_resource type="FontFile" uid="uid://wtjo68m12553" path="res://misc/fonts/MonaspaceArgon-Medium.otf" id="5_l5pxe"]
@@ -53,6 +52,10 @@ font_size = 42
 [sub_resource type="LabelSettings" id="LabelSettings_vqkwy"]
 font = ExtResource("5_l5pxe")
 font_size = 37
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_l5pxe"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bud5a"]
 
 [node name="calendar" type="Control"]
 layout_mode = 3
@@ -407,12 +410,6 @@ theme_override_styles/focus = SubResource("StyleBoxEmpty_vrnb8")
 theme_override_styles/pressed = SubResource("StyleBoxEmpty_xnkdq")
 flat = true
 
-[node name="todo-list" parent="." instance=ExtResource("3_vrnb8")]
-visible = false
-layout_mode = 1
-offset_top = 8.0
-offset_bottom = 8.0
-
 [node name="label" type="Control" parent="."]
 anchors_preset = 0
 offset_right = 40.0
@@ -462,6 +459,22 @@ label_settings = SubResource("LabelSettings_vqkwy")
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="shutdown" type="Button" parent="."]
+layout_mode = 0
+offset_left = 504.0
+offset_top = 8.0
+offset_right = 776.0
+offset_bottom = 64.0
+theme_override_styles/focus = SubResource("StyleBoxEmpty_l5pxe")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_bud5a")
+flat = true
+
+[node name="ConfirmationDialog" type="ConfirmationDialog" parent="."]
+title = "Shutdown"
+initial_position = 1
+always_on_top = true
+dialog_text = "Your PC will shutdown"
+
 [connection signal="text_changed" from="mercredi/mercredi" to="." method="_on_mercredi_text_changed"]
 [connection signal="text_changed" from="lundi/lundi" to="." method="_on_lundi_text_changed"]
 [connection signal="text_changed" from="jeudi/jeudi" to="." method="_on_jeudi_text_changed"]
@@ -469,3 +482,6 @@ vertical_alignment = 1
 [connection signal="text_changed" from="vendredi/vendredi" to="." method="_on_vendredi_text_changed"]
 [connection signal="text_changed" from="mardi/mardi" to="." method="_on_mardi_text_changed"]
 [connection signal="pressed" from="change" to="." method="_on_change_pressed"]
+[connection signal="pressed" from="shutdown" to="." method="_on_shutdown_pressed"]
+[connection signal="canceled" from="ConfirmationDialog" to="." method="_on_confirmation_dialog_canceled"]
+[connection signal="confirmed" from="ConfirmationDialog" to="." method="_on_confirmation_dialog_confirmed"]

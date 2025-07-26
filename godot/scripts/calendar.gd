@@ -123,3 +123,18 @@ func update_current_date():
 	
 	
 	
+
+
+func _on_shutdown_pressed() -> void:
+	$ConfirmationDialog.show()
+	
+
+
+func _on_confirmation_dialog_confirmed() -> void:
+	OS.execute("shutdown", ["-h", "now"])
+
+
+
+
+func _on_confirmation_dialog_canceled() -> void:
+	$ConfirmationDialog.hide()
